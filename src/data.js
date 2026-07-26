@@ -3,7 +3,7 @@
 
 export const profile = {
   name: "Akbar Ali Ahmed Ahmed Naser",
-  role: "FULLSTACK DEVELOPER | FRONTEND DEVELOPER | BACKEND DEVELOPER",
+  role: "FULLSTACK DEVELOPER | FRONTEND DEVELOPER",
   availableFrom: "Start: November 2026 | Duration: 4 Months",
 };
 
