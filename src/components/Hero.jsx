@@ -64,21 +64,21 @@ export default function Hero() {
         </div>
 
         <div className="relative shrink-0" style={fade(0.15)}>
-          <svg width="192" height="192" viewBox="0 0 192 192" className="absolute inset-0 spin-slow">
-            <circle cx="96" cy="96" r="94" fill="none" stroke={C.cyan} strokeWidth="1" strokeDasharray="2 6" opacity="0.6" />
+          <svg width="224" height="224" viewBox="0 0 224 224" className="absolute inset-0 spin-slow">
+            <circle cx="112" cy="112" r="110" fill="none" stroke={C.cyan} strokeWidth="1" strokeDasharray="2 6" opacity="0.6" />
             {[...Array(24)].map((_, i) => {
               const angle = (i / 24) * Math.PI * 2;
-              const x1 = 96 + Math.cos(angle) * 100;
-              const y1 = 96 + Math.sin(angle) * 100;
-              const x2 = 96 + Math.cos(angle) * 94;
-              const y2 = 96 + Math.sin(angle) * 94;
+              const x1 = 112 + Math.cos(angle) * 117;
+              const y1 = 112 + Math.sin(angle) * 117;
+              const x2 = 112 + Math.cos(angle) * 110;
+              const y2 = 112 + Math.sin(angle) * 110;
               return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={C.cyan} strokeWidth="1" opacity="0.5" />;
             })}
           </svg>
           <img
             src={profileImg}
             alt={profile.name}
-            className="w-48 h-48 rounded-full object-cover relative"
+            className="w-56 h-56 rounded-full object-cover relative"
             style={{ border: `2px solid ${C.paper}`, margin: "8px", objectPosition: "center 15%" }}
           />
         </div>
