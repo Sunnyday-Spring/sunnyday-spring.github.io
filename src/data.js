@@ -3,6 +3,7 @@
 
 export const profile = {
   name: "Akbar Ali Ahmed Ahmed Naser",
+  role: "Frontend Developer | Backend Developer",
   availableFrom: "Start: November 2026 | Duration: 4 Months",
 };
 
@@ -65,28 +66,148 @@ export const skillGroups = [
   },
 ];
 
-export const projects = [
-  {
-    code: "DWG · 01",
-    title: "Skill Gauge",
-    role: "Construction Worker Skill Assessment System — Project Manager & Full-stack",
-    roleTh: "ระบบประเมินทักษะช่างก่อสร้าง — ผู้จัดการโปรเจกต์ & Full-stack",
-    bullets: [
-      "Acted as Project Manager for a 3-member development team, coordinating tasks and managing version control with Git.",
-      "Built a full-stack web app with a React frontend and a Python (Flask) REST API backend across four roles: PM, Foreman, Worker, and Admin.",
-      "Developed a technical exam module covering calculation-based assessments across 5 construction categories (Rebar, Concrete, Formwork, Elements, Design/Theory).",
-      "Implemented server-side workflow routing, including Mixed-Integer Programming (MIP) to optimally assign tasks by assessed skill level.",
-      "Designed the SQL database schema and optimized storage by only persisting exam records that meet the 70% passing threshold.",
-    ],
-    bulletsTh: [
-      "รับบทบาทผู้จัดการโปรเจกต์ (Project Manager) ดูแลทีมพัฒนา 3 คน วางแผนงานและจัดการเวอร์ชันโค้ดด้วย Git",
-      "พัฒนาเว็บแอปแบบ full-stack ด้วย React ฝั่งหน้าบ้าน และ Python (Flask) REST API ฝั่งหลังบ้าน รองรับ 4 บทบาท: PM, Foreman, Worker, Admin",
-      "พัฒนาโมดูลข้อสอบทักษะเชิงคำนวณ ครอบคลุม 5 หมวดงานก่อสร้าง (เหล็กเสริม, คอนกรีต, แบบหล่อ, งานติดตั้ง, ออกแบบ/ทฤษฎี)",
-      "ออกแบบระบบจัดสรรงานฝั่งเซิร์ฟเวอร์ รวมถึงใช้ Mixed-Integer Programming (MIP) เพื่อจัดสรรงานให้เหมาะกับระดับทักษะที่ประเมินได้",
-      "ออกแบบโครงสร้างฐานข้อมูล SQL และลดพื้นที่จัดเก็บด้วยการเก็บเฉพาะผลสอบที่ผ่านเกณฑ์ 70%",
-    ],
-    stack: ["React", "Python", "Flask", "SQL", "Git", "GitHub"],
+// The flagship project gets a full-width "case study" layout (see FeaturedProject.jsx)
+export const featuredProject = {
+  code: "DWG · 01",
+  title: "Skill Gauge",
+  tagline: "Construction Worker Skill Assessment System",
+  taglineTh: "ระบบประเมินทักษะช่างก่อสร้าง",
+  stack: ["React", "Python", "Flask", "SQL", "Git", "GitHub"],
+
+  summary:
+    "A full-stack web app that verifies construction workers' skills through structured exams, then automatically assigns tasks to the right people using an optimization algorithm.",
+  summaryTh:
+    "เว็บแอปแบบ full-stack ที่ประเมินทักษะช่างก่อสร้างด้วยข้อสอบที่มีโครงสร้างชัดเจน แล้วจัดสรรงานให้ตรงกับคนที่เหมาะสมโดยอัตโนมัติด้วยอัลกอริทึมการหาค่าเหมาะที่สุด",
+
+  highlights: [
+    "Team of 3 · PM & Full-stack",
+    "4 role-based dashboards",
+    "MIP-based task optimizer",
+    "70% threshold DB optimization",
+  ],
+  highlightsTh: [
+    "ทีม 3 คน · PM & Full-stack",
+    "แดชบอร์ด 4 บทบาท",
+    "จัดสรรงานด้วย MIP",
+    "ลดพื้นที่ฐานข้อมูลด้วยเกณฑ์ 70%",
+  ],
+
+  overview: {
+    label: "Overview & Problem Statement",
+    labelTh: "ภาพรวมและปัญหา",
+    about: {
+      heading: "About the Project",
+      headingTh: "เกี่ยวกับโปรเจกต์",
+      text: "Skill Gauge is a full-stack web application built to bridge the gap between skill assessment and site execution in construction management. The platform evaluates construction workers through structured, calculation-based technical examinations and intelligently optimizes task assignments based on verified skill levels.",
+      textTh: "Skill Gauge เป็นเว็บแอปพลิเคชันแบบ full-stack ที่พัฒนาขึ้นเพื่อเชื่อมช่องว่างระหว่างการประเมินทักษะและการปฏิบัติงานจริงในหน้างานก่อสร้าง ระบบประเมินช่างก่อสร้างผ่านข้อสอบเชิงคำนวณที่มีโครงสร้างชัดเจน และจัดสรรงานอย่างชาญฉลาดตามระดับทักษะที่ผ่านการยืนยันแล้ว",
+    },
+    problem: {
+      heading: "The Problem It Solves",
+      headingTh: "ปัญหาที่แก้ไข",
+      text: "In traditional construction management, task allocation is often manual and prone to human error, resulting in skilled workers doing basic labor or under-skilled workers taking on complex structural tasks. Skill Gauge automates and verifies this workflow, ensuring the right tasks go to the right people while keeping data storage efficient.",
+      textTh: "ในการบริหารงานก่อสร้างแบบดั้งเดิม การจัดสรรงานมักทำด้วยมือและมีโอกาสผิดพลาดสูง ทำให้ช่างที่มีทักษะสูงต้องทำงานพื้นฐาน หรือช่างที่ทักษะยังไม่พร้อมต้องรับงานโครงสร้างที่ซับซ้อนเกินไป Skill Gauge ช่วยให้กระบวนการนี้เป็นระบบอัตโนมัติและมีการยืนยันผล ทำให้งานที่เหมาะสมไปถึงคนที่เหมาะสม พร้อมจัดเก็บข้อมูลอย่างมีประสิทธิภาพ",
+    },
   },
+
+  myRole: {
+    label: "My Role & Key Responsibilities",
+    labelTh: "บทบาทและสิ่งที่ทำ",
+    role: "Project Manager & Full-stack Developer",
+    roleTh: "ผู้จัดการโปรเจกต์ & นักพัฒนา Full-stack",
+    teamSize: "3 Members",
+    teamSizeTh: "ทีม 3 คน",
+    responsibilities: [
+      "Led project planning, feature prioritization, and managed version control workflows using Git.",
+      "Designed and developed multi-role user interfaces (PM, Foreman, Worker, Admin).",
+      "Implemented backend logic, server-side workflow routing, and mathematical task assignment solvers.",
+      "Designed relational database schemas and optimized backend storage constraints.",
+    ],
+    responsibilitiesTh: [
+      "วางแผนโปรเจกต์ จัดลำดับความสำคัญของฟีเจอร์ และดูแล workflow การจัดการเวอร์ชันโค้ดด้วย Git",
+      "ออกแบบและพัฒนาส่วนติดต่อผู้ใช้สำหรับ 4 บทบาท (PM, Foreman, Worker, Admin)",
+      "พัฒนา logic ฝั่งเซิร์ฟเวอร์ การจัดสรร workflow และตัวคำนวณการจัดสรรงานเชิงคณิตศาสตร์",
+      "ออกแบบโครงสร้างฐานข้อมูลเชิงสัมพันธ์ และปรับเงื่อนไขการจัดเก็บข้อมูลฝั่งเซิร์ฟเวอร์ให้มีประสิทธิภาพ",
+    ],
+  },
+
+  frontend: {
+    label: "Frontend Architecture",
+    labelTh: "ส่วนหน้าบ้าน",
+    stack: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+    features: [
+      {
+        title: "Role-Based Access Control (RBAC)",
+        text: "Custom dashboards and navigation flows tailored specifically for 4 user roles: Project Manager, Foreman, Worker, and Admin.",
+        textTh: "แดชบอร์ดและเส้นทางการนำทางที่ออกแบบเฉพาะสำหรับผู้ใช้ 4 บทบาท: ผู้จัดการโปรเจกต์, โฟร์แมน, ช่าง, และผู้ดูแลระบบ",
+      },
+      {
+        title: "Calculation-Based Exam Module",
+        text: "An interactive examination screen designed for workers to take technical assessments covering 5 core construction categories:",
+        textTh: "หน้าจอสอบแบบอินเทอร์แอคทีฟสำหรับให้ช่างทำข้อสอบเชิงเทคนิค ครอบคลุม 5 หมวดหลักของงานก่อสร้าง:",
+        list: [
+          "Rebar Calculation (งานเหล็กเสริม)",
+          "Concrete Volume & Pouring (งานคอนกรีต)",
+          "Formwork Area & Structure (งานไม้แบบ)",
+          "Structural Elements (องค์ประกอบโครงสร้าง)",
+          "Design & Theory (ทฤษฎีการออกแบบ)",
+        ],
+      },
+    ],
+  },
+
+  backend: {
+    label: "Backend & Logic Architecture",
+    labelTh: "ส่วนหลังบ้าน",
+    stack: ["Python (Flask)", "RESTful API", "SQL"],
+    workflow: {
+      heading: "Workflow & State Routing Logic",
+      headingTh: "ตรรกะการจัดสรร Workflow ตามสถานะ",
+      states: [
+        {
+          title: "Worker State 1 (No Exam)",
+          text: "Restricted by the server to take only minor/basic tasks.",
+          textTh: "ระบบจำกัดให้รับได้เฉพาะงานพื้นฐาน/งานย่อย",
+        },
+        {
+          title: "Worker State 2 (Exam Passed, Pending Level)",
+          text: "Paused in a waiting queue awaiting physical evaluation and sign-off by a Foreman.",
+          textTh: "อยู่ในคิวรอการตรวจสอบภาคปฏิบัติและอนุมัติจากโฟร์แมน",
+        },
+        {
+          title: "Worker State 3 (Leveled Worker)",
+          text: "Eligible for major task assignments (Levels 1–3).",
+          textTh: "มีสิทธิ์รับงานหลักตามระดับที่ประเมินได้ (Level 1–3)",
+        },
+      ],
+    },
+    solver: {
+      heading: "Mathematical Assignment Solver (MIP)",
+      headingTh: "ตัวคำนวณการจัดสรรงาน (MIP)",
+      text: "Built the core assignment solver using Mixed-Integer Programming (MIP) logic on the backend. It dynamically processes worker skill levels and task difficulty requirements to calculate the most optimal worker-to-task distribution.",
+      textTh: "พัฒนาตัวคำนวณการจัดสรรงานหลักด้วยหลัก Mixed-Integer Programming (MIP) ฝั่งเซิร์ฟเวอร์ ประมวลผลระดับทักษะของช่างและความยากของงานแบบไดนามิก เพื่อหาการจัดสรรงาน-ช่างที่เหมาะสมที่สุด",
+    },
+    dbOptimization: {
+      heading: "Database Optimization",
+      headingTh: "การปรับประสิทธิภาพฐานข้อมูล",
+      text: "Designed the SQL database schema and implemented backend validation constraints: exam records are only saved to the database if the score meets or exceeds the 70% passing threshold, significantly reducing database overhead and redundant storage usage.",
+      textTh: "ออกแบบโครงสร้างฐานข้อมูล SQL และกำหนดเงื่อนไขตรวจสอบฝั่งเซิร์ฟเวอร์ โดยจะบันทึกผลสอบลงฐานข้อมูลเฉพาะกรณีที่ได้คะแนนถึงเกณฑ์ผ่าน 70% ขึ้นไป ช่วยลดภาระและพื้นที่จัดเก็บข้อมูลที่ไม่จำเป็นได้มาก",
+    },
+  },
+
+  techStackSummary: {
+    label: "Tech Stack Summary",
+    labelTh: "สรุปเทคโนโลยีที่ใช้",
+    groups: [
+      { title: "Frontend", items: ["React", "JavaScript", "Tailwind CSS"] },
+      { title: "Backend", items: ["Python (Flask)"] },
+      { title: "Optimization & Math", items: ["Mixed-Integer Programming (MIP)"] },
+      { title: "Database", items: ["SQL"] },
+      { title: "Tools & Collaboration", items: ["Git", "GitHub", "Postman", "Figma"] },
+    ],
+  },
+};
+
+export const projects = [
   {
     code: "DWG · 02",
     title: "Secure Access Terminal",
@@ -145,5 +266,18 @@ export const certificates = [
     title: "Foundations of UX Design — Google",
     image: "/certificates/cert-4.png",
     date: "31 Aug 2024",
+  },
+];
+
+export const timeline = [
+  {
+    when: "2022 — Present",
+    title: "B.S. Computer Science",
+    place: "University of Phayao · GPA 2.64 / 4.00",
+  },
+  {
+    when: "2024",
+    title: "HealthTech X2 — The Future Startup Program",
+    place: "Designed UI layouts and system concepts in Figma with the team",
   },
 ];

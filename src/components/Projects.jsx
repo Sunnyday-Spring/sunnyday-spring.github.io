@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { C, mono } from "../theme";
-import { projects } from "../data";
+import { projects, featuredProject } from "../data";
 import SectionLabel from "./ui/SectionLabel";
 import ProjectCard from "./ui/ProjectCard";
+import FeaturedProject from "./ui/FeaturedProject";
 import Reveal from "./ui/Reveal";
 
 export default function Projects() {
@@ -30,7 +31,12 @@ export default function Projects() {
             ))}
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-8 mt-2">
+
+        <Reveal>
+          <FeaturedProject project={featuredProject} lang={lang} />
+        </Reveal>
+
+        <div className="grid md:grid-cols-2 gap-8 mt-8">
           {projects.map((p, i) => (
             <Reveal key={p.code} delay={i * 0.1}>
               <ProjectCard {...p} lang={lang} />
